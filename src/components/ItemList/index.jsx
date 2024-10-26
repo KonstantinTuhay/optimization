@@ -1,9 +1,11 @@
-import { useEffect, useMemo } from "react";
+import React, { useMemo } from "react";
 
-const ItemList = ({ names, strState }) => {
+const ItemList = React.memo(({ names, strState }) => {
+  console.log("ItemList");
+
   const filterItems = useMemo(() => {
     return names.filter((item) => item.toLowerCase().includes(strState));
-  }, [names]);
+  }, [names, strState]);
 
   return (
     <>
@@ -12,6 +14,8 @@ const ItemList = ({ names, strState }) => {
       })}
     </>
   );
-};
+});
+
+ItemList.displayName = "ItemList";
 
 export default ItemList;

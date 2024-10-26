@@ -1,4 +1,8 @@
-const SearchInput = ({ strState, callbackFuncStr }) => {
+import React from "react";
+
+const SearchInput = React.memo(({ strState, callbackFuncStr }) => {
+  console.log("SearchInput");
+
   return (
     <>
       <input
@@ -7,6 +11,8 @@ const SearchInput = ({ strState, callbackFuncStr }) => {
       />
     </>
   );
-};
+});
+
+SearchInput.displayName = "SearchInput";
 
 export default SearchInput;
