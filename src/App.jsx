@@ -4,6 +4,8 @@ import CounterButton from "./components/CounterButton";
 import { useCallback, useState, useMemo } from "react";
 
 function App() {
+  const [names, setNames] = useState(["Alex", "Max", "Sasha", "Dima"]);
+
   console.log("App");
 
   const [strState, setStrState] = useState("");
@@ -17,7 +19,7 @@ function App() {
     setCounter((counter) => counter + 1);
   }, []);
 
-  const names = useMemo(() => ["Alex", "Max", "Sasha", "Dima"], []);
+  // const names = useMemo(() => ["Alex", "Max", "Sasha", "Dima"], []);
 
   return (
     <>
